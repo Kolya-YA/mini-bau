@@ -1,0 +1,25 @@
+<div class="cards">
+    <ul class="cards__list">
+    {{ range where site.RegularPages "Type" . }}
+        <li class="cards__item item">
+            <div class="card">
+                {{- $serviceImg := resources.GetMatch (printf "images/%s" .Params.serviceImg) }}
+                {{ if $serviceImg }}
+                {{- $serviceImg = $serviceImg.Fill "320x320 webp q68" }}
+                <img src="{{ $serviceImg.RelPermalink }}" alt="{{ .Title }}">
+                {{ end }}
+                <div class="card__content">
+                    <h3 class="card__title">{{ .Title }}</h3>
+                    <div class="card__description">
+                        {{ .Params.description }}
+                    </div>
+                    <p class="card__price"><span>ab 25€</span>per m²</p>
+                </div>
+            </div>
+            {{ if .Content }}
+            <a class="item__show-more" href="{{ .RelPermalink }}">Mehr anzeigen</a>
+            {{ end }}
+        </li>
+    {{ end }}
+    </ul>
+</div>

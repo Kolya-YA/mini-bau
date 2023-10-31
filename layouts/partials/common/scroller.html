@@ -1,0 +1,7 @@
+<div class="scroller">
+    <ul class="scroller__list">
+    {{ range where site.RegularPages "Type" . }}
+        <li>{{ .Title }}</li>
+    {{ end }}
+    </ul>
+</div>
