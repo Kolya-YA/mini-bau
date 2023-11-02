@@ -1,0 +1,34 @@
+.portfolio {   
+    inline-size: min(100% - 4rem, 70rem);
+    margin-inline: auto; 
+
+    // .portfolio__section {
+    //     outline: 3px aquamarine solid;
+    // }
+
+    .portfolio__scroller {
+        padding: var(--main-gap);
+        display: grid;
+        gap: 1rem;
+        grid-auto-flow: column;
+        grid-auto-columns: 21%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: inline mandatory;
+        scroll-padding-inline: .5rem;
+    }
+
+    .portfolio__item {
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        // box-shadow: 0px 0px 4px 6px coral;
+        overflow: hidden;
+        scroll-snap-align: start;
+
+        img {
+            inline-size: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+    }
+}

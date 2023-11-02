@@ -1,0 +1,27 @@
+{{ with where site.RegularPages "Type" . }}
+<section class="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio__scroller">
+        {{ $len := len .}}
+        {{ range $i, $el := . }}
+            {{ $media := resources.GetMatch (printf "images/%s" $el.Params.media) }}
+            {{/*  {{ if eq $i 0 }}
+            <div class="portfolio__section">
+            {{ else if eq (mod $i 3) 0 }}
+            </div>
+            <div class="portfolio__section">
+            {{ end }}  */}}
+                <div class="portfolio__item">
+                    {{ if $media }}
+                    {{- $media = $media.Resize "x240 webp q68" }}
+                    <img src="{{ $media.RelPermalink }}" alt="{{ .Title }}">
+                    {{ end }} 
+                    {{/*  {{ .Title }}  */}}
+                </div>
+            {{/*  {{ if eq $i (sub $len 1) }}
+            </div>
+            {{ end }}  */}}
+        {{ end }}
+    </div>
+</section>
+{{ end }}
