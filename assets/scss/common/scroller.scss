@@ -1,7 +1,7 @@
 .scroller {
-    max-width: Min(calc(100vw - (var(--block-gap) * 2)), 70ch);
+    // max-width: Min(calc(100vw - (var(--block-gap) * 2)), 70ch);
+    // margin-inline: auto;
     margin-block: var(--block-gap);
-    margin-inline: auto;
     color: var(--light-text-color);
 
     &__list {

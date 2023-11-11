@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ partial "homepage/hero" . }}
   <hr>
+  <h2>{{ site.Title }}</h2>
   {{ .Content }}
   {{ partial "common/cards" "services" }}
   {{ partial "common/portfolio" "portfolio" }}

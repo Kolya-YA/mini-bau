@@ -1,40 +1,39 @@
-<header class="header">
-    {{ partial "header/skip-to-content" }}
-    <div class="width-wrapper">
-        <div class="header__block">
-            <a href="{{ site.Home.RelPermalink }}" class="header__logo" aria-label="{{ site.Params.logoName }}. Startseite.">
-                {{/*  {{ partial "logo-svg" . }}  */}}
-                <span class="header__logo-name">{{ site.Params.logoName }}</span>
-                <h1>{{ site.Title }}</h1>
-            </a>
-            {{- partial "header/nav-toggler" . }}
-            
-            <nav class="header__nav" id="mainnav" data-visibility="hidden" aria-label="Hauptmenü">
-                <ul class="header__nav-list" role="list">
-                    {{- range .Site.Menus.top }}
-                    {{-
-                        $active := or 
-                        (or (page.IsMenuCurrent "top" . ) (page.IsMenuCurrent "info" . ))
-                        (or (page.HasMenuCurrent "top" . ) (page.HasMenuCurrent "info" . ))
-                    }}
-                    <li class="header__nav-item
-                        {{- if $active }} header__nav-item--active{{ end }}
-                        {{- if .HasChildren }} header__nav-item--has-children{{ end -}}
-                    ">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
-                        {{- with .Children }}
-                        <ul class="header__nav-sublist">
-                            {{- range . }}
-                            <li class="header__nav-subitem">
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            {{- end }}
-                        </ul>
+{{ partial "header/skip-to-content" }}
+<header class="header width-grid">
+    <div class="header__block breakout">
+        <a href="{{ site.Home.RelPermalink }}" class="header__logo" aria-label="{{ site.Params.logoName }}. Startseite.">
+            {{/*  {{ partial "logo-svg" . }}  */}}
+            <span class="header__logo-name">{{ site.Params.logoName }}</span>
+            <h1><span>ROB<br>BAU</span></h1>
+            {{/*  {{ site.Title }}  */}}
+        </a>
+        {{- partial "header/nav-toggler" . }}
+        
+        <nav class="header__nav" id="mainnav" data-visibility="hidden" aria-label="Hauptmenü">
+            <ul class="header__nav-list" role="list">
+                {{- range .Site.Menus.top }}
+                {{-
+                    $active := or 
+                    (or (page.IsMenuCurrent "top" . ) (page.IsMenuCurrent "info" . ))
+                    (or (page.HasMenuCurrent "top" . ) (page.HasMenuCurrent "info" . ))
+                }}
+                <li class="header__nav-item
+                    {{- if $active }} header__nav-item--active{{ end }}
+                    {{- if .HasChildren }} header__nav-item--has-children{{ end -}}
+                ">
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{- with .Children }}
+                    <ul class="header__nav-sublist">
+                        {{- range . }}
+                        <li class="header__nav-subitem">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
                         {{- end }}
-                    </li>
-                    {{ end }}
-                </ul>
-            </nav>
-        </div>    
-    </div>
+                    </ul>
+                    {{- end }}
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div> 
 </header>

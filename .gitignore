@@ -11,8 +11,6 @@ Thumbs.db
 public/
 nbproject/
 
-# Vagrant
-.vagrant/
 
 # FE Setup
 .bin/node_modules/
@@ -32,3 +30,5 @@ partials/structure/stylesheet.html
 
 # Hugo
 .hugo_build.lock
+public
+resources/_gen
