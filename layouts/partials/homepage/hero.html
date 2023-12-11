@@ -1,11 +1,22 @@
 {{ $headless := .Site.GetPage "/headless" }}
 {{ with $headless.Resources.GetMatch "hero*" }}
-<div class="info index__bottom-info">
-    <h2>{{ .Title }}</h2>
-    {{ .Content }}
-    <div>{{ .Params.Offer }}</div>
-    <div>{{ .Params.bgImg }}</div>
-    <div>{{ .Params.heroImg }}</div>
-    <div>{{ .Params.heroImgDscr }}</div>
-</div>
+<section class="hero">
+    {{ $logoSplit := split site.Params.LogoName " " }}
+    <div class="hero__brand">
+        <h1>
+            <span>{{ index $logoSplit 0 }}</span>
+            <span>{{ index $logoSplit 1 }}</span>
+            <span>{{ site.Params.subHeader }}</span>
+        </h1>
+    </div>
+    
+    <div class="">
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+        <div>{{ .Params.Offer }}</div>
+        <div>{{ .Params.bgImg }}</div>
+        <div>{{ .Params.heroImg }}</div>
+        <div>{{ .Params.heroImgDscr }}</div>
+    </div>
+</section>
 {{ end }}

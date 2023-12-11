@@ -1,0 +1,29 @@
+.hero {
+
+    display: grid;
+    gap: var(--block-gap);
+    grid-template-columns: min-content 1fr;
+    &__brand {
+        padding-block: var(--main-gap);
+        color: var(--dark-bg-color);
+        font-size: 1.6rem;
+        
+        h1  {
+            span {
+                display: block;
+                text-transform: uppercase;
+            }
+
+            span:not(:last-child) {
+                font-family: 'Rubik Moonrocks';
+                font-size: 10rem;
+                line-height: .8;
+            }
+
+            span:last-child {
+                text-wrap: balance;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-// @use "common/fonts";
+@use "common/fonts";
 @use "common/custom-properties";
 @use "common/utility";
 @use "common/setup";
@@ -17,7 +17,7 @@
 
 @use "header";
 
-// @use "homepage/hero";
+@use "homepage/hero";
 // @use "homepage/content";
 // @use "homepage/services";
 // @use "homepage/blog";
@@ -25,6 +25,6 @@
 // @use "list";
 // @use "single";
 
-// @use "footer/footer";
+@use "footer/footer";
 // @use "footer/footer-nav";
-// @use "footer/footer-legal";
+@use "footer/footer-bottom";

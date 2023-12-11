@@ -1,3 +1,7 @@
+.brand-font {
+    font-family: 'Rubik Moonrocks', sans-serif;    
+}
+
 .width-grid {
     --padding-inline: 1rem;
     --content-max-width: 1080px;
@@ -18,11 +22,19 @@
         minmax(0, var(--breakout-size)) [breakout-end]
         minmax(var(--padding-inline), 1fr) [full-width-end];
 
-    & > :not(.breakout, .full-width) {
+    > :not(.breakout, .full-width),
+    .full-width > :not(.breakout, .full-width) {
         grid-column: content;
     }
 
-    & > .breakout {
+    > .breakout,
+    .full-width > .breakout {
         grid-column: breakout;
+    }
+
+    > .full-width {
+        grid-column: full-width;
+        display: grid;
+        grid-template-columns: inherit;
     }
 }

@@ -3,10 +3,14 @@
     <div class="header__block breakout">
         <a href="{{ site.Home.RelPermalink }}" class="header__logo" aria-label="{{ site.Params.logoName }}. Startseite.">
             {{/*  {{ partial "logo-svg" . }}  */}}
-            <span class="header__logo-name">{{ site.Params.logoName }}</span>
-            <h1><span>ROB<br>BAU</span></h1>
-            {{/*  {{ site.Title }}  */}}
+            <h1 class="header__logo-name">
+                {{ $logoSplit := split site.Params.LogoName " " }}
+                {{ upper (index $logoSplit 0) }}
+                <br>
+                {{ upper (index $logoSplit 1) }}
+            </h1>
         </a>
+
         {{- partial "header/nav-toggler" . }}
         
         <nav class="header__nav" id="mainnav" data-visibility="hidden" aria-label="Hauptmenü">
