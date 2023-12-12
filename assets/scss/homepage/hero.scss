@@ -1,16 +1,19 @@
 .hero {
-
     display: grid;
     gap: var(--block-gap);
     grid-template-columns: min-content 1fr;
+    
+    padding-block: var(--block-gap);
     &__brand {
-        padding-block: var(--main-gap);
+        // background-color: aquamarine;
+
         color: var(--dark-bg-color);
         font-size: 1.6rem;
         
-        h1  {
+        h1 {
             span {
                 display: block;
+                text-align: center;
                 text-transform: uppercase;
             }
 
@@ -21,8 +24,42 @@
             }
 
             span:last-child {
+                padding-block-start: var(--main-gap);
                 text-wrap: balance;
-                text-align: center;
+            }
+        }
+    }
+
+    &__side {
+        // background: linear-gradient(90deg, transparent 10%, grey);
+        // background: radial-gradient(ellipse at right, var(--dark-bg-color-light), transparent 60%);
+
+        position: relative;
+        isolation: isolate;
+
+        img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            object-fit: contain;
+            max-height: 100%;
+            margin-inline-start: auto;
+            box-shadow:  -30px 12px 30px -16px var(--dark-bg-color);
+        }
+
+        &-content {
+            position: absolute;
+            bottom: 12%;
+            padding: var(--main-gap);
+            background-color: var(--dark-bg-color);
+            background-color: color-mix(in oklch, var(--dark-bg-color), transparent 20%);
+            border-radius: var(--border-radius);
+            color: var(--light-bg-color);
+
+            h2 {
+                margin-block-end: var(--main-gap);
+                text-wrap: balance;
+
             }
         }
     }
