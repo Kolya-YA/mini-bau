@@ -2,11 +2,9 @@
     display: grid;
     gap: var(--block-gap);
     grid-template-columns: min-content 1fr;
-    
     padding-block: var(--block-gap);
-    &__brand {
-        // background-color: aquamarine;
 
+    &__brand {
         color: var(--dark-bg-color);
         font-size: 1.6rem;
         
@@ -31,9 +29,6 @@
     }
 
     &__side {
-        // background: linear-gradient(90deg, transparent 10%, grey);
-        // background: radial-gradient(ellipse at right, var(--dark-bg-color-light), transparent 60%);
-
         position: relative;
         isolation: isolate;
 
@@ -59,7 +54,6 @@
             h2 {
                 margin-block-end: var(--main-gap);
                 text-wrap: balance;
-
             }
         }
     }

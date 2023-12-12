@@ -40,7 +40,7 @@
     &[data-animated="true"] {        
         overflow: hidden;
         -webkit-mask: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
-        mask: linear-gradient(transparent, white);
+        mask: linear-gradient(90deg, transparent, white 12%, white 88%, transparent);
         
         .scroller__list {
             width: max-content;

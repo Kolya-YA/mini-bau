@@ -1,0 +1,9 @@
+.home-content {
+    background-color: var(--dark-bg-color);
+    color: var(--light-bg-color);
+    padding-block: var(--block-gap);
+
+    & > * + * {
+        margin-top: var(--main-gap, 1em);
+    }
+}
