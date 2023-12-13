@@ -4,10 +4,7 @@
         <a href="{{ site.Home.RelPermalink }}" class="header__logo" aria-label="{{ site.Params.logoName }}. Startseite.">
             {{/*  {{ partial "logo-svg" . }}  */}}
             <h1 class="header__logo-name">
-                {{ $logoSplit := split site.Params.LogoName " " }}
-                {{ upper (index $logoSplit 0) }}
-                <br>
-                {{ upper (index $logoSplit 1) }}
+                {{ site.Params.LogoName }}
             </h1>
         </a>
 
@@ -22,7 +19,7 @@
                     (or (page.HasMenuCurrent "top" . ) (page.HasMenuCurrent "info" . ))
                 }}
                 <li class="header__nav-item
-                    {{- if $active }} header__nav-item--active{{ end }}
+                    {{/*  {{- if $active }} header__nav-item--active{{ end }}  */}}
                     {{- if .HasChildren }} header__nav-item--has-children{{ end -}}
                 ">
                     <a href="{{ .URL }}">{{ .Name }}</a>

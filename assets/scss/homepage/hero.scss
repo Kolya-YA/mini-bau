@@ -44,7 +44,8 @@
 
         &-content {
             position: absolute;
-            bottom: 12%;
+            bottom: 10%;
+            max-width: 92%;
             padding: var(--main-gap);
             background-color: var(--dark-bg-color);
             background-color: color-mix(in oklch, var(--dark-bg-color), transparent 20%);

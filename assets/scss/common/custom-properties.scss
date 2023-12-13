@@ -37,18 +37,18 @@
     
     --border-radius: 0.2rem;
 
-    --ff-main: "Exo", Arial, Helvetica, sans-serif;
+    --ff-main: system-ui;
     --ff-accent: "Courier New", Courier, monospace;
-    --ff-mono: "Courier New", Courier, monospace;
+    --ff-mono: 'Nimbus Mono PS', 'Courier New', monospace;
     
-    /* font-sizes */
-    --fs-800: 3.5rem;
-    --fs-700: 1.5rem;
-    --fs-600: 1.2rem;
-    --fs-500: 1.1rem;
-    --fs-400: 1rem;
-    --fs-300: 0.9375rem;
-    --fs-200: 0.875rem;
+    /* font-sizes */   
+  --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+  --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+  --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+  --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+  --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
 
     /* paddings, margins, gaps */
     --main-gap: clamp(.7rem, calc(.5rem + 1vw), 1rem);
