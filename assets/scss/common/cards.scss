@@ -2,14 +2,13 @@
     // max-width: Min(calc(100vw - (var(--block-gap) * 2)), 48ch);
     margin-block: var(--block-gap);
     margin-inline: auto;
-    color: var(--light-text-color);
     
     &__list {
         margin: 0;
         padding: 0;
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 38ch), 1fr));;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 34ch), 1fr));;
         gap: var(--block-gap);
 
 
@@ -34,14 +33,18 @@
 
         .card {
             // padding: var(--main-gap);
+            --_text-bg: #0004;
+
             height: 100%;
             min-height: 220px;
             display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-columns: 1fr 2fr 3fr;
             background-color: var(--dark-bg-color);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             overflow: hidden;
+            overflow: clip;
+            color: var(--light-text-color);
 
             > img {
                 aspect-ratio: 1;
@@ -62,32 +65,33 @@
                 background: linear-gradient(90deg, transparent, var(--dark-bg-color) 22%);
                 
                 .card__title {
-                    color: #3B4856;
-                    color: #C97B9D;
+                    width: max-content;
+                    margin-inline-start: auto;
+                    padding-inline: calc(var(--main-gap) / 6);
+                    font-size: var(--fs-500);
                     color: #eee;
+                    background-color: var(--_text-bg);
                     text-align: end;
-                    font-size: 1.6rem;
                 }
                 
                 .card__description {
-                    padding: calc(var(--main-gap) / 8);
-                    background-color: #0004;
+                    padding-inline: calc(var(--main-gap) / 6);
+                    background-color: var(--_text-bg);
                 }
 
                 .card__price {
                     width: max-content;
                     padding: .3rem .5rem;
                     border: solid 3px var(--warning-color);
-                    background-color: #0004;
+                    background-color: var(--_text-bg);
                     border-radius: 5px;
                     margin-inline-start: auto;
                     line-height: 1;
 
                     span {
-                        display: block;
-                        font-size: 1.6rem;
+                        // display: block;
+                        font-size: var(--fs-500);
                         font-weight: 800;
-
                     }
                 }
             }

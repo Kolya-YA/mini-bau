@@ -1,6 +1,9 @@
 <div class="cards breakout">
+    {{ with site.GetPage "/services" }}
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
     <ul class="cards__list">
-    {{ range where site.RegularPages "Type" . }}
+    {{ range .Pages }}
         <li class="cards__item item">
             <div class="card">
                 {{- $serviceImg := resources.GetMatch (printf "images/%s" .Params.serviceImg) }}
@@ -13,13 +16,20 @@
                     <div class="card__description">
                         {{ .Params.description }}
                     </div>
-                    <p class="card__price"><span>ab 25€</span>per m²</p>
+                    <p class="card__price">
+                        {{ with .Params.Price }}
+                            ab <span>{{ .Value }}€</span><br>per {{ .Unit }}
+                        {{ else }}
+                            ab <span>25€</span><br>per m²
+                        {{ end }}
+                    </p>
                 </div>
             </div>
             {{ if .Content }}
             <a class="item__show-more" href="{{ .RelPermalink }}">Mehr anzeigen</a>
             {{ end }}
         </li>
+    {{ end }}
     {{ end }}
     </ul>
 </div>

@@ -16,7 +16,7 @@
             }
 
             span:not(:last-child) {
-                font-family: 'Rubik Moonrocks';
+                font-family: var(--ff-accent);
                 font-size: 10rem;
                 line-height: .8;
             }
@@ -24,6 +24,7 @@
             span:last-child {
                 padding-block-start: var(--main-gap);
                 text-wrap: balance;
+                line-height: 1.1;
             }
         }
     }
