@@ -3,8 +3,7 @@
         --justify-blocks: space-between;
     }
 
-    background-color: var(--dark-bg-color);
-    border-top: 5px solid var(--dark-bg-color-light);
+    background-color: var(--dark-bg-color-dark);
 
     &-inner {
         padding-block: var(--main-gap);
@@ -17,20 +16,22 @@
     .legal-nav {
         display: flex;
         gap: var(--main-gap);
+        margin: 0;
         padding: 0;
         list-style: none;
     
         &__link {
-            color: var(--light-bg-color);
+            
+            color: inherit;
             text-decoration: none;
             transition: color 300ms linear;
 
             &:is(:hover, :focus-visible) {
-                color: var(--link-color-light);
+                // color: var(--link-color-light);
             }
     
             &--active {
-                color: var(--link-color);
+                // color: var(--link-color);
             }
         }
     }

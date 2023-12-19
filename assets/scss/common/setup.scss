@@ -5,26 +5,35 @@
 }
 
 html {
+    scroll-behavior: var(--scroll-behavior, auto);
     color-scheme: var(--color-scheme);
 }
 
 body {
+    min-height: 100dvh;
     margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     font-family: var(--font-family, sans-serif);
     font-size: var(--fs-400);
     line-height: 1.5;
     hyphens: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure {
+h1, h2, h3, h4, h5, h6,
+p, ul, figure {
   margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--dark-bg-color);
+    font-family: var(--ff-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-800);
+    line-height: 1.1;
+    text-wrap: balance;
+
 }
 
 img {

@@ -1,0 +1,23 @@
+.footer__top {
+    @media (min-width: 60ch) {
+        --justify-blocks: space-between;
+    }
+
+    padding-block: var(--main-gap);
+
+    &-inner {
+        display: flex;
+        gap: var(--main-gap);
+        justify-content: var(--justify-blocks, center);
+        // flex-wrap: wrap;
+    }
+
+    .footer__brand {
+    }
+    
+    .footer__services {
+        flex: 0;
+        // flex: 1 100vw;
+        // max-width: 100%;
+    }
+}

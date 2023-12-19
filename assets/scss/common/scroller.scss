@@ -1,21 +1,20 @@
 .scroller {
     // max-width: Min(calc(100vw - (var(--block-gap) * 2)), 70ch);
-    // margin-inline: auto;
+    margin-inline: auto;
     margin-block: var(--block-gap);
-    color: var(--light-text-color);
-
+    
     &__list {
         display: flex;
         flex-wrap: wrap;
         gap: var(--main-gap);
         margin: 0;
-        padding-block: calc(var(--block-gap) * 2);
-        padding-inline: 0;
+        padding: 0;
         list-style: none;
-
+        
         & > li {
             padding: var(--main-gap);
-            background-color: var(--dark-bg-color);
+            background-color: var(--_scroller-bg-color, var(--dark-bg-color));
+            color: var(--_scroller-text-color, var(--light-text-color));
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
         }

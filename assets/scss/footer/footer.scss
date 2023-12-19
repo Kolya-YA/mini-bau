@@ -1,4 +1,7 @@
 .footer {
+    --_scroller-bg-color: var(--dark-bg-color-dark);
 
-    background-color: coral;
+    background-color: var(--dark-bg-color);
+    border-top: 5px solid var(--dark-bg-color-light);
+    color: var(--light-text-color);
 }

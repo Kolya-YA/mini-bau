@@ -1,20 +1,14 @@
 :root, ::backdrop {
     /* Colors */
-    --accent-color-night: hsl(101, 58%, 16%);
-    --accent-color-dark: hsl(101, 58%, 26%);
-    --accent-color: hsl(101, 58%, 46%);
-    --accent-color-light: hsl(101, 58%, 66%);
     
-    // --warning-color: hsl(348, 56%, 47%);
     --warning-color: hsl(331, 45%, 43%);
 
     --link-color-dark: hsl(240, 33%, 50%);
     --link-color: hsl(240, 33%, 70%);
-    --link-color-light: hsl(240, 33%, 90%);
     
-    --dark-bg-color-dark: hsl(94, 11%, 6%);
+    --dark-bg-color-dark: hsl(200, 100%, 18%);
     --dark-bg-color: hsl(200, 100%, 30%);
-    --dark-bg-color-light: hsl(94, 11%, 46%);
+    --dark-bg-color-light: hsl(200, 90%, 46%);
     
     --light-bg-color-dark: hsl(94, 73%, 78%);
     --light-bg-color: hsl(94, 73%, 98%);
@@ -37,7 +31,7 @@
     
     --border-radius: 0.2rem;
 
-    --ff-main: system-ui;
+    --ff-main: system-ui, sans-serif;
     --ff-accent: 'Rubik Moonrocks', sans-serif;
     --ff-mono: 'Nimbus Mono PS', 'Courier New', monospace;
     
@@ -52,5 +46,11 @@
 
     /* paddings, margins, gaps */
     --main-gap: clamp(.7rem, calc(.5rem + 1vw), 1rem);
-    --block-gap: calc(var(--main-gap) * 2)
+    --block-gap: calc(var(--main-gap) * 2);
+
+    --scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion) {
+        --scroll-behavior: auto;
+    }
 }

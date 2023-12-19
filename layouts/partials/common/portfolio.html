@@ -1,6 +1,6 @@
 {{ with where site.RegularPages "Type" . }}
-<section class="portfolio">
-    <h2>Portfolio</h2>
+<section id="portfolio" class="portfolio">
+    <h2>Porfolio</h2>
     <div class="portfolio__scroller">
         {{ $len := len .}}
         {{ range $i, $el := . }}
